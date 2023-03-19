@@ -1,0 +1,10 @@
+.list{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+}
+input{
+    width: 370px;
+    height: 25px;
+}
