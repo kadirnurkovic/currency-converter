@@ -49,7 +49,7 @@ const MainPage = () => {
           {console.log(initialCurrencyValue)}
           <select className="selection">
           {currencyData.keys.map((key, index) => (
-          <option key={index} value={key[0]}>
+          <option key={index} value={key[1]}>
             
             {key[1]}
           </option>
