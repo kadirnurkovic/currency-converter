@@ -14,11 +14,11 @@ const MainPage = () => {
   });
   const [check, setCheck] = useState(1);
   const [currency, setCurrency] = useState("");
-  const [firstValue, setFirstValue] = useState(0)
+  const [firstValue, setFirstValue] = useState(1)
   const [value, setValue] = useState<number>(1);
   const [currencyValue, setCurrencyValue] = useState(1);
   const [initialCurrencyValue, setInitialCurrencyValue] = useState<number>(0);
-  const [resultOfConvert, setResultOfConvert] = useState(0);
+  const [resultOfConvert, setResultOfConvert] = useState(1);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentCurrency, setCurrentCurrency] = useState(0);
 
@@ -32,7 +32,7 @@ const MainPage = () => {
         setCurrencyData({
           values: Object.entries(res.data.results),
         });
-        setFirstValue(res.data.results['AMD'])
+        
       });
   };
   
@@ -40,7 +40,12 @@ const MainPage = () => {
 
   useEffect(() => {
     getData();
+    setInitialCurrencyValue(
+      +((1 / firstValue) * value * resultOfConvert).toFixed(2)
+    )
   }, []);
+
+  console.log(initialCurrencyValue)
 
   return (
     <div className="main">

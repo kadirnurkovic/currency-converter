@@ -17,11 +17,14 @@
     height: 540px;
     width: 360px;
     border-radius: 30px;
+    box-shadow: 0px 0px 10px black;
 }
 input{
     width: 150px;
     height: 25px;
-    border-radius: 15px;
+    border-radius: 5px;
+    border: 1px solid #554455;
+
 }
 .selection{
     height: 30px;
