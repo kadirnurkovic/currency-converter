@@ -32,11 +32,12 @@ const MainPage = () => {
         setCurrencyData({
           values: Object.entries(res.data.results),
         });
-        
+        setFirstValue(+res.data.results['AED'])
+        setResultOfConvert(+res.data.results['AED'])
       });
   };
-  
-  console.log(firstValue)
+
+  console.log(currencyData)
 
   useEffect(() => {
     getData();
@@ -71,7 +72,7 @@ const MainPage = () => {
           </select>
         </div>
         <div className="outputContainer">
-          <input value={initialCurrencyValue} />
+          <input value={initialCurrencyValue } />
           <select
             className="selection"
             onChange={(e) => {
