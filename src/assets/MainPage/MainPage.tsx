@@ -25,15 +25,15 @@ const MainPage = () => {
   const getData = () => {
     axios
       .get(
-        `https://api.fastforex.io/fetch-all?api_key=0f81809aa0-04a2c27ae4-rrovxg`
+        `https://api.freecurrencyapi.com/v1/latest?apikey=8NztjPGOhtlwR8meov9g5DE6Rw5nFNKySD3BDpq9`
       )
       .then((res) => {
         console.log(res);
         setCurrencyData({
           values: Object.entries(res.data.results),
         });
-        setFirstValue(+res.data.results['AED'])
-        setResultOfConvert(+res.data.results['AED'])
+        setFirstValue(+res.data.results['AED']);
+        setResultOfConvert(+res.data.results['AED']);  
       });
   };
 
@@ -51,6 +51,7 @@ const MainPage = () => {
   return (
     <div className="main">
       <div className="list">
+        <div className='font'>Currency converter</div>
         <div className="inputContainer">
           <input
             onChange={(e) => {
@@ -72,7 +73,7 @@ const MainPage = () => {
           </select>
         </div>
         <div className="outputContainer">
-          <input value={initialCurrencyValue } />
+          <input value={initialCurrencyValue} disabled className="input-div"/>
           <select
             className="selection"
             onChange={(e) => {
